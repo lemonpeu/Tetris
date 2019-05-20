@@ -203,13 +203,13 @@ let dropInterval = 1000;
 let lastTime = 0;
 function update(time = 0) {
     const deltaTime = time - lastTime;
-    lastTime = time;
+
     dropCounter += deltaTime;
-    
     if (dropCounter > dropInterval) {
-        player.pos.y++;
-        dropCounter = 0;
+        playerDrop();
     }
+
+    lastTime = time;
 
     draw();
     requestAnimationFrame(update);
@@ -217,26 +217,6 @@ function update(time = 0) {
 
 function updateScore() {
     document.getElementById('score').innerText = player.score;
-}
-
-const colors = [
-    null,
-    '#FF0D72',
-    '#0DC2FF',
-    '#0DFF72',
-    '#F538FF',
-    '#FF8E0D',
-    '#FFE138',
-    '#3877FF',
-];
-
-const arena = createMatrix(12, 20);
-console.log(arena); console.table(arena);
-
-const player = {
-    pos: {x: 0, y: 0},
-    matrix: null,
-    score: 0,
 }
 
 document.addEventListener('keydown', event => {
@@ -255,6 +235,24 @@ document.addEventListener('keydown', event => {
     }
 });
 
+const colors = [
+    null,
+    '#FF0D72',
+    '#0DC2FF',
+    '#0DFF72',
+    '#F538FF',
+    '#FF8E0D',
+    '#FFE138',
+    '#3877FF',
+];
+
+const arena = createMatrix(12, 20);
+
+const player = {
+    pos: {x: 0, y: 0},
+    matrix: null,
+    score: 0,
+}
 
 playerReset();
 updateScore();
