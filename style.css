@@ -1,0 +1,21 @@
+body {
+    background-color: #121420;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    color: #B76D68;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+
+}
+
+.text {
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #403F4C
+}
