@@ -6,7 +6,7 @@ body {
     flex-direction: column;
 }
 
-p {
+#score {
     color: #B76D68;
     font-size: 25px;
     font-family: 'Ubuntu', sans-serif;
